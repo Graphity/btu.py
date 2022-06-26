@@ -3,7 +3,7 @@ import pathlib
 import os
 import json
 
-from classroom import Classroom
+from .classroom import Classroom
 from getpass import getpass
 
 
