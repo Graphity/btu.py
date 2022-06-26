@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "btu.py"
+version = "0.0.1"
+authors = [
+  { name="Saba Umikashvili" }
+]
+description = "Fetch BTU Classroom data easily"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+	"requests",
+	"beautifulsoup4"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Graphity/btu.py"
+"Bug Tracker" = "https://github.com/Graphity/btu.py/issues"
+
+[project.scripts]
+btu-fetch = "btu.__main__:main"
