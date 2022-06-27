@@ -16,11 +16,10 @@ class Classroom:
         self.session = requests.session()
         r = self.session.post(url, data=data)
         soup = BeautifulSoup(r.content, "html.parser")
-        try:
-            alert_message = soup.find("span", {"class": "alert-message"}).text.strip()
-            raise Exception(f"X {alert_message}")
-        except:
-            return soup
+        alert_message = soup.find("span", class_="alert-message")
+        if alert_message:
+            raise Exception(alert_message.text.strip())
+        return soup
 
     @property
     def semester(self) -> str:
